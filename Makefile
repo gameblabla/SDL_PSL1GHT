@@ -113,6 +113,7 @@ $(TARGET): $(OBJECTS)
 install:
 	cp $(TARGET) $(PS3DEV)/portlibs/ppu/lib/$(TARGET)
 	cp -r include /tmp
+	cp -r include $(PS3DEV)/portlibs/ppu
 	mv /tmp/include /tmp/SDL
 	cp -r /tmp/SDL $(PS3DEV)/portlibs/ppu/include
 	rm -r /tmp/SDL
