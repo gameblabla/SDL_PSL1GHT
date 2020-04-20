@@ -5,7 +5,7 @@ STRIP = $(PS3DEV)/ppu/bin/powerpc64-ps3-elf-strip
 
 INCLUDE = -I include
 CFLAGS = -Wall -Wextra -O2 -flto -Wno-unused-parameter
-CFLAGS += -mcpu=cell  -I$(PS3DEV)/portlibs/ppu/include/SDL -I$(PS3DEV)/portlibs/ppu/include
+CFLAGS += -mcpu=cell  -I$(PS3DEV)/portlibs/ppu/include/SDL -I$(PS3DEV)/portlibs/ppu/include -I$(PS3DEV)/ppu/include
 CFLAGS += -maltivec -DHAVE_STDINT_H -D_STDINT_H_ -D__PSL1GHT__ -DHAVE_POW -DHAVE_MMAP=0 -DDEBUG_ERROR
 
 TARGET = libSDL.a
