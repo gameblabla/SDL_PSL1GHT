@@ -4,11 +4,11 @@ RANLIB = $(PS3DEV)/ppu/bin/powerpc64-ps3-elf-ranlib
 STRIP = $(PS3DEV)/ppu/bin/powerpc64-ps3-elf-strip
 
 INCLUDE = -I include
-CFLAGS = -Wall -Wextra -O2 -flto -Wno-unused-parameter
+CFLAGS = -Wall -Wextra -O2 -Wno-unused-parameter
 CFLAGS += -mcpu=cell  -I$(PS3DEV)/portlibs/ppu/include/SDL -I$(PS3DEV)/portlibs/ppu/include -I$(PS3DEV)/ppu/include
 CFLAGS += -maltivec -DHAVE_STDINT_H -D_STDINT_H_ -D__PSL1GHT__ -DHAVE_POW -DHAVE_MMAP=0 -DDEBUG_ERROR
 
-TARGET = libSDL.a
+TARGET = libSDL2.a
 CONFIG_H = include/SDL_config.h
 SOURCES = \
 	src/SDL.c \
@@ -114,9 +114,9 @@ install:
 	cp $(TARGET) $(PS3DEV)/portlibs/ppu/lib/$(TARGET)
 	cp -r include /tmp
 	cp -r include $(PS3DEV)/portlibs/ppu
-	mv /tmp/include /tmp/SDL
-	cp -r /tmp/SDL $(PS3DEV)/portlibs/ppu/include
-	rm -r /tmp/SDL
+	mv /tmp/include /tmp/SDL2
+	cp -r /tmp/SDL2 $(PS3DEV)/portlibs/ppu/include
+	rm -r /tmp/SDL2
 	
 clean:
 	rm -f $(OBJECTS) $(TARGET)
